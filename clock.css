@@ -1,0 +1,75 @@
+body {
+    background-color: slateblue;
+}
+
+.container {
+    padding: 5px;
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-end;
+    flex-wrap: wrap;
+    height: 250px;
+    width: 500px;
+    background-color: aqua;
+}
+
+.hourInfo,
+.wrapper {
+    padding: 5px;
+    height: 40px;
+    width: inherit;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    background-color: grey;
+    margin-bottom: 5px;
+}
+
+.fulltime,
+.halftime {
+    margin: 5px;
+    display: block;
+    width: auto;
+}
+
+.halftime {
+    visibility: hidden;
+}
+
+.switch {
+    padding-top: 5px;
+    padding-left: 5px;
+    height: 20px;
+    width: 50px;
+    background-color: #252525;
+    border-radius: 125px;
+}
+
+.ball {
+    height: 15px;
+    width: 15px;
+    border-radius: 50%;
+    transition: 0.2s;
+    background-color: #FAEBD7;
+}
+
+
+.time {
+    padding: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    flex-wrap: nowrap;
+    height: 120px;
+    width: -webkit-fill-available;
+    background: #FAEBD7;
+}
+
+.hour,
+.minute,
+.second {
+    border: 2px solid yellow;
+    height: inherit;
+    width: inherit;
+    background-color: black;
+}
