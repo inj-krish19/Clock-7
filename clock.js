@@ -44,7 +44,7 @@ function updateTime() {
 
 }
 
-// setInterval(updateTime, duration);
+setInterval(updateTime, duration);
 
 let ballClick = 0;
 const black = "#252525";

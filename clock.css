@@ -67,6 +67,7 @@ body {
     height: 120px;
     width: -webkit-fill-available;
     background: #FAEBD7;
+    color: white;
 }
 
 .hour,
@@ -154,7 +155,7 @@ body {
 
     .time {
         flex-wrap: wrap;
-        height: 100%
+        height: 100%;
     }
 
 }
