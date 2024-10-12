@@ -35,6 +35,7 @@ body {
     margin: 5px;
     display: block;
     width: auto;
+    font-weight: bold;
 }
 
 .halftime {
