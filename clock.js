@@ -67,7 +67,6 @@ function updateTime() {
     if (seconds === 0 && minutes === 0) {
         hours = (hours + increase) % dividorHours;
         setPadding("hour");
-        ballClick--;
     }
     setPadding("hour");
 
@@ -102,7 +101,7 @@ function recalculateTime() {
 
         if (hours === 24) {
             halfTime.innerHTML = 0 + "AM";
-            hour.innerHTML = String(0).padStart(2, '0') + "AMKJKJ";
+            hour.innerHTML = String(0).padStart(2, '0') + "AM";
         } else if (hours === 12) {
             halfTime.innerHTML = 12 + "PM";
             hour.innerHTML = 12;// + "PM";
@@ -114,6 +113,7 @@ function recalculateTime() {
             hour.innerHTML = hours % 12;// + "PM";
             hours %= 12;
         }
+        setPadding("hour");
 
         fullTime.style.visibility = "hidden";
         halfTime.style.visibility = "visible";
