@@ -1,4 +1,3 @@
-
 const body = document.querySelector("body");
 const wrapper = document.querySelector(".wrapper");
 const region = document.querySelector(".region");
@@ -26,6 +25,19 @@ let dividorHours = 12;
 let seconds = today.getSeconds();
 let minutes = today.getMinutes();
 let hours = today.getHours();
+
+let ballClick = 0;
+const black = "#252525";
+const white = "#FAEBD7";
+
+const mySwitch = document.querySelector(".switch");
+const ball = document.querySelector(".ball");
+
+const fullTime = document.querySelector(".fulltime");
+const halfTime = document.querySelector(".halftime");
+
+const width = 50;
+const ballWidth = 20;
 
 function setPadding(timeBlock) {
 
@@ -76,19 +88,6 @@ setPadding("all");
 
 setInterval(updateTime, duration);
 
-let ballClick = 0;
-const black = "#252525";
-const white = "#FAEBD7";
-
-const mySwitch = document.querySelector(".switch");
-const ball = document.querySelector(".ball");
-
-const fullTime = document.querySelector(".fulltime");
-const halfTime = document.querySelector(".halftime");
-
-const width = 50;
-const ballWidth = 20;
-
 function recalculateTime() {
 
     if (ballClick % 2 === 0) {
@@ -136,7 +135,11 @@ function recalculateTime() {
 
 }
 
-mySwitch.onclick = () => {
+function switchClicked() {
     recalculateTime();
     ballClick++;
+}
+
+mySwitch.onclick = () => {
+    switchClicked();
 }
