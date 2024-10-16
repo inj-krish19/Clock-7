@@ -78,7 +78,7 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    border: 2px solid yellow;
+    border: 2px solid;
     height: inherit;
     width: inherit;
     background-color: black;
@@ -107,7 +107,7 @@ body {
     .hour,
     .minute,
     .second {
-        border: 2px solid yellow;
+        border: 2px solid whitesmoke;
         height: 32%;
         width: 100%;
         background-color: black;
@@ -155,7 +155,7 @@ body {
     .hour,
     .minute,
     .second {
-        border: 2px solid yellow;
+        border: 2px solid whitesmoke;
         height: 32%;
         width: 100%;
         background-color: black;
@@ -207,7 +207,7 @@ body {
     .minute,
     .second {
         margin: 0;
-        border: 2px solid yellow;
+        border: 2px solid whitesmoke;
         height: 30%;
         width: 100%;
         background-color: black;
