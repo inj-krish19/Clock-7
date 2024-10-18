@@ -1,4 +1,3 @@
-
 const body = document.querySelector("body");
 const wrapper = document.querySelector(".wrapper");
 const region = document.querySelector(".region");
@@ -27,25 +26,6 @@ let seconds = today.getSeconds();
 let minutes = today.getMinutes();
 let hours = today.getHours();
 
-function updateTime() {
-
-    seconds = (seconds + increase) % dividorSeconds;
-    second.innerHTML = String(seconds).padStart(2, '0');
-
-    if (seconds === 0) {
-        minutes = (minutes + increase) % dividorMinutes;
-    }
-    minute.innerHTML = String(minutes).padStart(2, '0');
-
-    if (seconds === 0 && minutes === 0) {
-        hours = (hours + increase) % dividorHours;
-    }
-    hour.innerHTML = String(hours).padStart(2, '0');
-
-}
-
-// setInterval(updateTime, duration);
-
 let ballClick = 0;
 const black = "#252525";
 const white = "#FAEBD7";
@@ -59,7 +39,56 @@ const halfTime = document.querySelector(".halftime");
 const width = 50;
 const ballWidth = 20;
 
-mySwitch.onclick = () => {
+function setPadding(timeBlock) {
+
+    if (timeBlock === "all") {
+        hour.innerHTML = String(hours).padStart(2, '0');
+        minute.innerHTML = String(minutes).padStart(2, '0');
+        second.innerHTML = String(seconds).padStart(2, '0');
+        return;
+    }
+
+    if (timeBlock === "hour") {
+        hour.innerHTML = String(hours).padStart(2, '0');
+        return;
+    }
+
+    if (timeBlock === "minute") {
+        minute.innerHTML = String(minutes).padStart(2, '0');
+        return;
+    }
+
+    if (timeBlock === "second") {
+        second.innerHTML = String(seconds).padStart(2, '0');
+        return;
+    }
+
+}
+
+function updateTime() {
+
+    seconds = (seconds + increase) % dividorSeconds;
+    setPadding("second");
+
+    if (seconds === 0) {
+        minutes = (minutes + increase) % dividorMinutes;
+    }
+    setPadding("minute");
+    minute.innerHTML = String(minutes).padStart(2, '0');
+
+    if (seconds === 0 && minutes === 0) {
+        hours = (hours + increase) % dividorHours;
+        setPadding("hour");
+    }
+    setPadding("hour");
+
+}
+
+setPadding("all");
+
+setInterval(updateTime, duration);
+
+function recalculateTime() {
 
     if (ballClick % 2 === 0) {
 
@@ -71,18 +100,27 @@ mySwitch.onclick = () => {
 
         if (hours === 24) {
             halfTime.innerHTML = 0 + "AM";
+            hour.innerHTML = String(0).padStart(2, '0') + "AM";
         } else if (hours === 12) {
             halfTime.innerHTML = 12 + "PM";
+            hour.innerHTML = 12;// + "PM";
         } else if (hours < 12) {
             halfTime.innerHTML = hours + "AM";
+            hour.innerHTML = hours;// + "AM";
         } else {
             halfTime.innerHTML = hours % 12 + "PM";
+            hour.innerHTML = hours % 12;// + "PM";
+            hours %= 12;
         }
+        setPadding("hour");
 
         fullTime.style.visibility = "hidden";
         halfTime.style.visibility = "visible";
 
     } else {
+
+        hours = today.getHours();
+        setPadding("hour");
 
         mySwitch.style.backgroundColor = black;
         ball.style.backgroundColor = white;
@@ -94,6 +132,14 @@ mySwitch.onclick = () => {
         halfTime.style.visibility = "hidden";
 
     }
-    ballClick++;
 
+}
+
+function switchClicked() {
+    recalculateTime();
+    ballClick++;
+}
+
+mySwitch.onclick = () => {
+    switchClicked();
 }
