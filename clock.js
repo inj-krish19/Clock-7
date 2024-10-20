@@ -16,15 +16,15 @@ const second = document.querySelector(".second");
 let today = new Date();
 
 let duration = 1000;
-let increase = 1;
+let increase = -1;
 
 let dividorSeconds = 60;
 let dividorMinutes = 60;
 let dividorHours = 12;
 
-let seconds = today.getSeconds();
-let minutes = today.getMinutes();
-let hours = today.getHours();
+let seconds = 0;
+let minutes = 5;
+let hours = 1;
 
 let ballClick = 0;
 const black = "#252525";
@@ -119,7 +119,7 @@ function recalculateTime() {
 
     } else {
 
-        hours = today.getHours();
+        hours = 1;
         setPadding("hour");
 
         mySwitch.style.backgroundColor = black;
