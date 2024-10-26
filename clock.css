@@ -26,7 +26,7 @@ body {
     display: flex;
     align-items: center;
     justify-content: flex-end;
-    background-color: whitesmoke;
+    background-color: rgb(64, 135, 189);
     margin-bottom: 5px;
 }
 
