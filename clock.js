@@ -68,11 +68,20 @@ function setPadding(timeBlock) {
 function updateTime() {
 
     seconds = (seconds + increase) % dividorSeconds;
+    if (seconds < 0) {
+        seconds = 59;
+    }
+
     setPadding("second");
 
     if (seconds === 0) {
         minutes = (minutes + increase) % dividorMinutes;
     }
+
+    if (minutes < 0) {
+        minutes = 59;
+    }
+
     setPadding("minute");
     minute.innerHTML = String(minutes).padStart(2, '0');
 
@@ -80,6 +89,11 @@ function updateTime() {
         hours = (hours + increase) % dividorHours;
         setPadding("hour");
     }
+
+    if (hours < 0) {
+        hours = 23;
+    }
+
     setPadding("hour");
 
 }
