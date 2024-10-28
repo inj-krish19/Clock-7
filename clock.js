@@ -22,9 +22,9 @@ let dividorSeconds = 60;
 let dividorMinutes = 60;
 let dividorHours = 12;
 
-let seconds = 0;
-let minutes = 5;
-let hours = 1;
+let seconds = 5;
+let minutes = 0;
+let hours = 0;
 
 let ballClick = 0;
 const black = "#252525";
@@ -90,8 +90,9 @@ function updateTime() {
         setPadding("hour");
     }
 
-    if (hours < 0) {
+    if (hours == 0 && minutes == 0 && seconds == 0) {
         hours = 23;
+        minutes = seconds = 59;
     }
 
     setPadding("hour");
