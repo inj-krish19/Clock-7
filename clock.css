@@ -68,7 +68,7 @@ body {
     flex-wrap: nowrap;
     height: 120px;
     width: -webkit-fill-available;
-    background: #FAEBD7;
+    background: rgb(68, 65, 124);
     color: white;
 }
 
@@ -78,7 +78,7 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    border: 2px solid;
+    border: 2px solid rgb(68, 65, 124);
     height: inherit;
     width: inherit;
     background-color: black;
