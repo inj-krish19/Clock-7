@@ -7,6 +7,13 @@ body {
     align-items: center;
 }
 
+.message {
+    display: block;
+    text-align: left;
+    text-decoration: double;
+
+}
+
 .container {
     margin: 5px;
     padding: 5px;
